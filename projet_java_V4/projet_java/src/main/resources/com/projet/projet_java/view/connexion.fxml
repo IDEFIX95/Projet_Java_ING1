@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane xmlns="http://javafx.com/javafx/23.0.1"
+           xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="com.projet.projet_java.controller.ConnexionController"
+           prefHeight="400.0" prefWidth="600.0">
+
+   <VBox alignment="CENTER" spacing="15.0">
+
+      <Label text="Connexion">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+
+      <TextField fx:id="emailField" promptText="email" prefWidth="250.0"/>
+      <PasswordField fx:id="passwordField" promptText="mot de passe" prefWidth="250.0"/>
+
+      <Button text="Se Connecter" onAction="#handleLogin" prefWidth="250.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+
+      <Label fx:id="errorLabel" text="impossible de se connecter" textFill="#f70505" visible="false">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+
+   </VBox>
+</StackPane>
