@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.projet.projet_java.controller.StatistiquesController">
+
+    <center>
+        <VBox spacing="15" alignment="CENTER">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+
+            <Label text="Statistiques de Tri" style="-fx-font-size: 24px; -fx-font-weight: bold;" />
+
+            <GridPane hgap="10" vgap="10">
+                <Label text="Total de déchets triés (kg):" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                <Label fx:id="totalDechetsLabel" text="..." GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                <Label text="Total de points gagnés:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                <Label fx:id="totalPointsLabel" text="..." GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                <Label text="Poubelle la plus utilisée:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                <Label fx:id="topPoubelleLabel" text="..." GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+            </GridPane>
+
+            <PieChart fx:id="dechetsChart" prefHeight="300" prefWidth="400"/>
+        </VBox>
+    </center>
+</BorderPane>
