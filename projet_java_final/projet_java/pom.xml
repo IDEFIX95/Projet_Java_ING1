@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.projet</groupId>
+  <artifactId>projet_java</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <name>projet_java</name>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>21</maven.compiler.source>
+    <maven.compiler.target>21</maven.compiler.target>
+    <junit.version>5.10.0</junit.version>
+  </properties>
+
+  <dependencies>
+    <!-- ✅ JavaFX -->
+    <dependency>
+      <groupId>org.openjfx</groupId>
+      <artifactId>javafx-controls</artifactId>
+      <version>21</version>
+    </dependency>
+    <dependency>
+      <groupId>org.openjfx</groupId>
+      <artifactId>javafx-fxml</artifactId>
+      <version>21</version>
+    </dependency>
+    <dependency>
+      <groupId>org.openjfx</groupId>
+      <artifactId>javafx-media</artifactId>
+      <version>21.0.2</version>
+    </dependency>
+    <dependency>
+      <groupId>org.openjfx</groupId>
+      <artifactId>javafx-web</artifactId>
+      <version>21</version>
+    </dependency>
+    <dependency>
+      <groupId>org.openjfx</groupId>
+      <artifactId>javafx-swing</artifactId>
+      <version>21</version>
+    </dependency>
+
+    <!-- ✅ UI / FX / Jeux -->
+    <dependency>
+      <groupId>org.controlsfx</groupId>
+      <artifactId>controlsfx</artifactId>
+      <version>11.1.2</version>
+    </dependency>
+    <dependency>
+      <groupId>org.kordamp.ikonli</groupId>
+      <artifactId>ikonli-javafx</artifactId>
+      <version>12.3.1</version>
+    </dependency>
+    <dependency>
+      <groupId>org.kordamp.bootstrapfx</groupId>
+      <artifactId>bootstrapfx-core</artifactId>
+      <version>0.4.0</version>
+    </dependency>
+    <dependency>
+      <groupId>eu.hansolo</groupId>
+      <artifactId>tilesfx</artifactId>
+      <version>11.48</version>
+    </dependency>
+    <dependency>
+      <groupId>net.synedra</groupId>
+      <artifactId>validatorfx</artifactId>
+      <version>0.4.0</version>
+    </dependency>
+    <dependency>
+      <groupId>com.github.almasb</groupId>
+      <artifactId>fxgl</artifactId>
+      <version>17.2</version>
+    </dependency>
+    <dependency>
+      <groupId>com.dlsc.formsfx</groupId>
+      <artifactId>formsfx-core</artifactId>
+      <version>11.6.0</version>
+    </dependency>
+
+    <!-- ✅ MySQL JDBC -->
+    <dependency>
+      <groupId>com.mysql</groupId>
+      <artifactId>mysql-connector-j</artifactId>
+      <version>8.2.0</version>
+    </dependency>
+
+    <!-- ✅ JUnit 5 -->
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-api</artifactId>
+      <version>${junit.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-engine</artifactId>
+      <version>${junit.version}</version>
+      <scope>test</scope>
+    </dependency>
+
+    <!-- ✅ ConsoleLauncher (pour MainTest) -->
+    <dependency>
+      <groupId>org.junit.platform</groupId>
+      <artifactId>junit-platform-console-standalone</artifactId>
+      <version>1.10.0</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <resources>
+      <!-- ✅ Inclure ressources (SQL, FXML, etc.) -->
+      <resource>
+        <directory>src/main/resources</directory>
+        <includes>
+          <include>**/*.*</include>
+        </includes>
+      </resource>
+    </resources>
+
+    <plugins>
+      <!-- ✅ Compilation Java 21 -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.11.0</version>
+        <configuration>
+          <release>21</release>
+        </configuration>
+      </plugin>
+
+      <!-- ✅ JavaFX pour jlink/jpackage -->
+      <plugin>
+        <groupId>org.openjfx</groupId>
+        <artifactId>javafx-maven-plugin</artifactId>
+        <version>0.0.8</version>
+        <configuration>
+          <mainClass>com.projet.projet_java.MainTest</mainClass>
+        </configuration>
+      </plugin>
+
+      <!-- ✅ JAR principal + test -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>3.3.0</version>
+        <executions>
+
+          <!-- 🎯 JAR principal avec MainTest -->
+          <execution>
+            <id>main-jar</id>
+            <goals><goal>jar</goal></goals>
+            <phase>package</phase>
+            <configuration>
+              <archive>
+                <manifest>
+                  <mainClass>com.projet.projet_java.MainTest</mainClass>
+                </manifest>
+              </archive>
+            </configuration>
+          </execution>
+
+          <!-- 🧪 JAR contenant les .class des tests -->
+          <execution>
+            <id>test-jar</id>
+            <goals><goal>test-jar</goal></goals>
+            <phase>package</phase>
+            <configuration>
+              <classifier>tests</classifier>
+            </configuration>
+          </execution>
+
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+</project>

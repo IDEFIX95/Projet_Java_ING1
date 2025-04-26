@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.projet.projet_java.controller.MesBonsController">
+
+    <!-- TOP : Titre + Bouton Retour -->
+    <top>
+        <HBox spacing="20" alignment="CENTER_LEFT" BorderPane.alignment="CENTER">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <Button text="Retour au Bon d'Achat" onAction="#handleRetourBonAchat"/>
+            <Label text="Mes Bons d'Achat" style="-fx-font-size: 18px; -fx-font-weight: bold;" />
+        </HBox>
+    </top>
+
+    <!-- CENTRE : TableView des Bons -->
+    <center>
+        <VBox spacing="20" alignment="CENTER" BorderPane.alignment="CENTER">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+
+            <TableView fx:id="bonsTable" prefHeight="450" prefWidth="800">
+                <columns>
+                    <TableColumn fx:id="commerceColumn" text="Commerce" prefWidth="150"/>
+                    <TableColumn fx:id="categorieColumn" text="Catégorie" prefWidth="150"/>
+                    <TableColumn fx:id="pointsColumn" text="Points Utilisés" prefWidth="100"/>
+                    <TableColumn fx:id="dateCreationColumn" text="Date de création" prefWidth="150"/>
+                    <TableColumn fx:id="dateExpirationColumn" text="Date d'expiration" prefWidth="150"/>
+                </columns>
+            </TableView>
+
+        </VBox>
+    </center>
+</BorderPane>

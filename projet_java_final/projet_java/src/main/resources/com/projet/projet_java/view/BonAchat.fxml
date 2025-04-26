@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Pos?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.projet.projet_java.controller.BonAchatController">
+
+    <!-- Haut de page -->
+    <top>
+        <HBox spacing="20" alignment="CENTER_LEFT" BorderPane.alignment="CENTER">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <Button text="Accueil" onAction="#handleRetourAccueil"/>
+            <Label fx:id="labelPoints" text="Vos Points : ..." />
+        </HBox>
+    </top>
+
+    <!-- Centre -->
+    <center>
+        <VBox spacing="30" alignment="TOP_CENTER" BorderPane.alignment="CENTER">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+
+            <GridPane hgap="20" vgap="15" alignment="CENTER">
+                <!-- Ligne 1 -->
+                <Label text="Carrefour : Bon d'achat de 10€ pour 50€ d'achat" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                <Button text="Utiliser 50 pts" onAction="#handleUtiliserBon1" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                <!-- Ligne 2 -->
+                <Label text="Leroy Merlin : Remise de 15% sur le rayon jardinage" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                <Button text="Utiliser 65 pts" onAction="#handleUtiliserBon2" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                <!-- Ligne 3 -->
+                <Label text="Biocoop : Produit éco offert dès 30€ d'achat" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                <Button text="Utiliser 40 pts" onAction="#handleUtiliserBon3" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+                <!-- Ligne 4 -->
+                <Label text="Netflix : 1 mois d'abonnement offert" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                <Button text="Utiliser 55 pts" onAction="#handleUtiliserBon4" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+            </GridPane>
+
+            <!-- BOUTONS SECONDAIRES -->
+            <HBox spacing="30" alignment="CENTER">
+                <Button text="Voir mes Bons" onAction="#handleVoirMesBons" style="-fx-font-size: 14px; -fx-padding: 10 20;"/>
+                <Button text="Voir les Partenaires" onAction="#handleVoirPartenaires" style="-fx-font-size: 14px; -fx-padding: 10 20;"/>
+            </HBox>
+
+        </VBox>
+    </center>
+
+</BorderPane>
