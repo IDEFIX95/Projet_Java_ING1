@@ -1,4 +1,0 @@
---patch-module
-com.projet.projet_java=_
---add-reads
-com.projet.projet_java=ALL-UNNAMED
