@@ -52,7 +52,7 @@ public class FenetreManager {
 
             ajouterFenetre(newStage);
         } catch (Exception e) {
-            System.err.println("❌ Erreur lors du changement de fenêtre : " + e.getMessage());
+            System.err.println(" Erreur lors du changement de fenêtre : " + e.getMessage());
             e.printStackTrace();
         }
     }
@@ -73,7 +73,7 @@ public class FenetreManager {
 
             ajouterFenetre(stage); // Pour pouvoir les fermer toutes ensuite
         } catch (Exception e) {
-            System.err.println("❌ Erreur ouverture fenêtre : " + cheminFXML);
+            System.err.println(" Erreur ouverture fenêtre : " + cheminFXML);
             e.printStackTrace();
         }
     }
