@@ -21,7 +21,7 @@ public class PoubelleDAO {
      */
     public boolean insert(PoubelleIntelligente p) {
         if (exists(p.getTypePoubelle(), p.getEmplacement(), p.getIdCentre())) {
-            System.err.println("⚠️ Une poubelle similaire existe déjà (même type, emplacement et centre).");
+            System.err.println(" Une poubelle similaire existe déjà (même type, emplacement et centre).");
             return false;
         }
 
@@ -46,7 +46,7 @@ public class PoubelleDAO {
             }
 
         } catch (SQLException e) {
-            System.err.println("❌ Erreur insertion poubelle : " + e.getMessage());
+            System.err.println(" Erreur insertion poubelle : " + e.getMessage());
         }
         return false;
     }
@@ -59,7 +59,7 @@ public class PoubelleDAO {
      */
     public boolean updateCapaciteActuelle(int idPoubelle, double nouvelleValeur) {
         if (nouvelleValeur < 0) {
-            System.err.println("❌ Capacité négative refusée pour la poubelle ID : " + idPoubelle);
+            System.err.println(" Capacité négative refusée pour la poubelle ID : " + idPoubelle);
             return false;
         }
 
@@ -73,15 +73,15 @@ public class PoubelleDAO {
 
             int rows = stmt.executeUpdate();
             if (rows == 0) {
-                System.err.println("⚠️ Aucun enregistrement mis à jour pour la poubelle ID : " + idPoubelle);
+                System.err.println(" Aucun enregistrement mis à jour pour la poubelle ID : " + idPoubelle);
                 return false;
             }
 
-            System.out.println("✅ Capacité mise à jour pour la poubelle ID " + idPoubelle + " → " + nouvelleValeur);
+            System.out.println(" Capacité mise à jour pour la poubelle ID " + idPoubelle + " → " + nouvelleValeur);
             return true;
 
         } catch (SQLException e) {
-            System.err.println("❌ Erreur mise à jour capacité actuelle : " + e.getMessage());
+            System.err.println(" Erreur mise à jour capacité actuelle : " + e.getMessage());
             return false;
         }
     }
@@ -109,7 +109,7 @@ public class PoubelleDAO {
             }
 
         } catch (SQLException e) {
-            System.err.println("❌ Erreur vérification doublon poubelle : " + e.getMessage());
+            System.err.println(" Erreur vérification doublon poubelle : " + e.getMessage());
         }
 
         return false;
@@ -134,7 +134,7 @@ public class PoubelleDAO {
             }
 
         } catch (SQLException e) {
-            System.err.println("❌ Erreur récupération par ID : " + e.getMessage());
+            System.err.println(" Erreur récupération par ID : " + e.getMessage());
         }
 
         return null;
@@ -157,7 +157,7 @@ public class PoubelleDAO {
             }
 
         } catch (SQLException e) {
-            System.err.println("❌ Erreur récupération de toutes les poubelles : " + e.getMessage());
+            System.err.println(" Erreur récupération de toutes les poubelles : " + e.getMessage());
         }
 
         return poubelles;
@@ -183,7 +183,7 @@ public class PoubelleDAO {
             }
 
         } catch (SQLException e) {
-            System.err.println("❌ Erreur récupération par type : " + e.getMessage());
+            System.err.println(" Erreur récupération par type : " + e.getMessage());
         }
 
         return result;
@@ -209,7 +209,7 @@ public class PoubelleDAO {
             }
 
         } catch (SQLException e) {
-            System.err.println("❌ Erreur récupération par emplacement : " + e.getMessage());
+            System.err.println(" Erreur récupération par emplacement : " + e.getMessage());
         }
 
         return result;
@@ -235,7 +235,7 @@ public class PoubelleDAO {
             }
 
         } catch (SQLException e) {
-            System.err.println("❌ Erreur récupération par centre : " + e.getMessage());
+            System.err.println(" Erreur récupération par centre : " + e.getMessage());
         }
 
         return result;
@@ -262,7 +262,7 @@ public class PoubelleDAO {
             }
 
         } catch (SQLException e) {
-            System.err.println("❌ Erreur récupération par type et emplacement : " + e.getMessage());
+            System.err.println(" Erreur récupération par type et emplacement : " + e.getMessage());
         }
 
         return null;
