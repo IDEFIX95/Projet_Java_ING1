@@ -16,7 +16,7 @@ public class HistoriqueDepot {
     private double quantiteDechets;
     private int pointsGagnes;
 
-    // 🔹 Constructeur complet (utile pour récupérer depuis la BDD)
+    //  Constructeur complet (utile pour récupérer depuis la BDD)
     public HistoriqueDepot(int idDepot, int idMenage, int idPoubelle, LocalDateTime heureDepot, double quantiteDechets, int pointsGagnes) {
         this.idDepot = idDepot;
         this.idMenage = idMenage;
@@ -26,7 +26,7 @@ public class HistoriqueDepot {
         this.pointsGagnes = pointsGagnes;
     }
 
-    // 🔹 Constructeur pour insertion rapide (heure générée automatiquement)
+    //  Constructeur pour insertion rapide (heure générée automatiquement)
     public HistoriqueDepot(int idMenage, int idPoubelle, double quantiteDechets, int pointsGagnes) {
         this.idMenage = idMenage;
         this.idPoubelle = idPoubelle;
