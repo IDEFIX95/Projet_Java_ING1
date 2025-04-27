@@ -37,7 +37,7 @@ public class ProfilController {
         if (menage != null) {
             nomField.setText(menage.getNom());
             emailField.setText(menage.getEmail());
-            passwordField.setText(""); // ✅ Champ vide pour sécurité
+            passwordField.setText(""); //  Champ vide pour sécurité
             adresseField.setText(menage.getAdresse());
             pointsLabel.setText(String.valueOf(menage.getPointsFidelity()));
             badgeLabel.setText(menage.getBadgeAccess());
@@ -57,7 +57,7 @@ public class ProfilController {
             menage.setEmail(emailField.getText());
             menage.setAdresse(adresseField.getText());
 
-            // 🎯 Mise à jour uniquement si un nouveau mot de passe est saisi
+            //  Mise à jour uniquement si un nouveau mot de passe est saisi
             if (!passwordField.getText().isEmpty()) {
                 String nouveauHash = HashUtils.hashPassword(passwordField.getText());
                 menage.setMotDePasse(nouveauHash);
@@ -65,9 +65,9 @@ public class ProfilController {
 
             boolean updated = menageDAO.updateMenage(menage);
             if (updated) {
-                showAlert(Alert.AlertType.INFORMATION, "✅ Mise à jour réussie !");
+                showAlert(Alert.AlertType.INFORMATION, " Mise à jour réussie !");
             } else {
-                showAlert(Alert.AlertType.ERROR, "❌ Une erreur est survenue lors de la mise à jour.");
+                showAlert(Alert.AlertType.ERROR, " Une erreur est survenue lors de la mise à jour.");
             }
         }
     }
