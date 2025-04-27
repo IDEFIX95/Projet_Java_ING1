@@ -35,13 +35,13 @@ public class BonAchatDAO {
             if (affected > 0) {
                 ResultSet rs = stmt.getGeneratedKeys();
                 if (rs.next()) {
-                    bon.setIdBonAchat(rs.getInt(1)); // 🔄 MAJ de l'ID du bon après insertion
+                    bon.setIdBonAchat(rs.getInt(1)); //  MAJ de l'ID du bon après insertion
                 }
                 return true;
             }
 
         } catch (SQLException e) {
-            System.err.println("❌ Erreur insertion bon d'achat : " + e.getMessage());
+            System.err.println(" Erreur insertion bon d'achat : " + e.getMessage());
         }
 
         return false;
@@ -68,7 +68,7 @@ public class BonAchatDAO {
             }
 
         } catch (SQLException e) {
-            System.err.println("❌ Erreur récupération bons par ménage : " + e.getMessage());
+            System.err.println(" Erreur récupération bons par ménage : " + e.getMessage());
         }
 
         return bons;
@@ -92,7 +92,7 @@ public class BonAchatDAO {
             }
 
         } catch (SQLException e) {
-            System.err.println("❌ Erreur récupération de tous les bons : " + e.getMessage());
+            System.err.println(" Erreur récupération de tous les bons : " + e.getMessage());
         }
 
         return bons;
