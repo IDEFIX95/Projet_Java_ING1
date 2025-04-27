@@ -26,7 +26,7 @@ public class DepotDechetsController {
     private final HistoriqueDepotDAO historiqueDAO = new HistoriqueDepotDAO();
     private final MenageDAO menageDAO = new MenageDAO();
 
-    private DashboardController dashboardController; // 🔥 Pour rafraîchir le Dashboard après dépôt
+    private DashboardController dashboardController; //  Pour rafraîchir le Dashboard après dépôt
     private final Random random = new Random();
 
     /**
@@ -45,19 +45,19 @@ public class DepotDechetsController {
     private void handleDepot() {
         PoubelleIntelligente poubelle = comboPoubelle.getValue();
         if (poubelle == null) {
-            afficherMessage("❌ Veuillez sélectionner une poubelle.", false);
+            afficherMessage(" Veuillez sélectionner une poubelle.", false);
             return;
         }
 
         Menage menage = UtilisateurConnecte.getInstance().getMenage();
         if (menage == null) {
-            afficherMessage("❌ Utilisateur non connecté.", false);
+            afficherMessage(" Utilisateur non connecté.", false);
             return;
         }
 
         String badgeSaisi = badgeField.getText();
         if (badgeSaisi == null || !badgeSaisi.equals(menage.getBadgeAccess())) {
-            afficherMessage("🚫 Badge incorrect. Dépôt refusé.", false);
+            afficherMessage(" Badge incorrect. Dépôt refusé.", false);
             return;
         }
 
@@ -69,7 +69,7 @@ public class DepotDechetsController {
         ajouterDechetSiCoche(checkMetal, TypeDechet.METAL, poubelle, corbeille);
 
         if (corbeille.getListeDechets().isEmpty()) {
-            afficherMessage("⚠️ Aucun type de déchet sélectionné.", false);
+            afficherMessage(" Aucun type de déchet sélectionné.", false);
             return;
         }
 
@@ -78,7 +78,7 @@ public class DepotDechetsController {
 
         // Vérification de la capacité de la poubelle
         if (poubelle.getCapaciteActuelle() + poidsTotal > poubelle.getCapaciteMaximale()) {
-            afficherMessage("❌ Poubelle pleine, dépôt refusé.", false);
+            afficherMessage(" Poubelle pleine, dépôt refusé.", false);
             return;
         }
 
@@ -117,7 +117,7 @@ public class DepotDechetsController {
         nouvelleCapacite = Math.round(nouvelleCapacite * 100.0) / 100.0;
         poubelleDAO.updateCapaciteActuelle(poubelle.getIdPoubelle(), nouvelleCapacite);
 
-        // 🔥 Mise à jour Dashboard
+        //  Mise à jour Dashboard
         DashboardController dashboard = UtilisateurConnecte.getInstance().getDashboardController();
         if (dashboard != null) {
             dashboard.refreshDashboard();
@@ -125,9 +125,9 @@ public class DepotDechetsController {
 
         // Message de confirmation
         if (totalPoints >= 0) {
-            afficherMessage("✅ Dépôt réussi. Points gagnés : " + totalPoints, true);
+            afficherMessage(" Dépôt réussi. Points gagnés : " + totalPoints, true);
         } else {
-            afficherMessage("⚠️ Dépôt avec erreur(s). Points perdus : " + Math.abs(totalPoints), false);
+            afficherMessage(" Dépôt avec erreur(s). Points perdus : " + Math.abs(totalPoints), false);
         }
 
         // Réinitialisation des champs
