@@ -22,19 +22,19 @@
     <VBox spacing="15" alignment="CENTER" AnchorPane.topAnchor="50" AnchorPane.leftAnchor="50"
           AnchorPane.rightAnchor="50" AnchorPane.bottomAnchor="50">
 
-        <!-- 🔹 Titre de la fenêtre de connexion -->
+        <!--  Titre de la fenêtre de connexion -->
         <Label text="Connexion" style="-fx-font-size: 24px; -fx-font-weight: bold;" />
 
-        <!-- 🔹 Champ de saisie de l'email -->
+        <!--  Champ de saisie de l'email -->
         <TextField fx:id="emailField" promptText="Email" maxWidth="250"/>
 
-        <!-- 🔹 Champ de saisie du mot de passe -->
+        <!--  Champ de saisie du mot de passe -->
         <PasswordField fx:id="passwordField" promptText="Mot de passe" maxWidth="250"/>
 
-        <!-- 🔹 Label d'erreur affiché en cas d'identifiants incorrects -->
+        <!--  Label d'erreur affiché en cas d'identifiants incorrects -->
         <Label fx:id="errorLabel" text="Identifiants incorrects" visible="false" textFill="red"/>
 
-        <!-- 🔹 Boutons d'action : Connexion ou Inscription -->
+        <!--  Boutons d'action : Connexion ou Inscription -->
         <HBox spacing="20" alignment="CENTER">
             <Button text="Se connecter" onAction="#handleLogin"/>
             <Button text="Créer un compte" onAction="#handleOpenInscription"/>
