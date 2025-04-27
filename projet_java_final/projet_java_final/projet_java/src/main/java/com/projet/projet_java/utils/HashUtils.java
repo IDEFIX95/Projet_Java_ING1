@@ -10,7 +10,7 @@ import java.security.NoSuchAlgorithmException;
 public class HashUtils {
 
     /**
-     * 🔹 Méthode pour hacher un mot de passe en SHA-256.
+     *  Méthode pour hacher un mot de passe en SHA-256.
      * @param password Le mot de passe en clair à hacher
      * @return Le mot de passe haché en format hexadécimal
      */
@@ -28,7 +28,7 @@ public class HashUtils {
             return hexString.toString();
 
         } catch (NoSuchAlgorithmException e) {
-            throw new RuntimeException("❌ Erreur de hachage du mot de passe", e);
+            throw new RuntimeException(" Erreur de hachage du mot de passe", e);
         }
     }
 }
