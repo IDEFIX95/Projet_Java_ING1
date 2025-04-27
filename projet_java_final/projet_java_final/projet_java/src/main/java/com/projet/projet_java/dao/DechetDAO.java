@@ -45,7 +45,7 @@ public class DechetDAO {
             }
 
         } catch (SQLException e) {
-            System.err.println("❌ Erreur lors de l'insertion du déchet : " + e.getMessage());
+            System.err.println(" Erreur lors de l'insertion du déchet : " + e.getMessage());
         }
 
         return generatedId;
@@ -76,7 +76,7 @@ public class DechetDAO {
             }
 
         } catch (SQLException e) {
-            System.err.println("❌ Erreur lors de la récupération du déchet : " + e.getMessage());
+            System.err.println(" Erreur lors de la récupération du déchet : " + e.getMessage());
         }
 
         return null;
@@ -106,7 +106,7 @@ public class DechetDAO {
             }
 
         } catch (SQLException e) {
-            System.err.println("❌ Erreur lors de la récupération de tous les déchets : " + e.getMessage());
+            System.err.println(" Erreur lors de la récupération de tous les déchets : " + e.getMessage());
         }
 
         return dechets;
