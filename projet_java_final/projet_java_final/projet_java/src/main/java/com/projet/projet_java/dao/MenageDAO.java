@@ -30,7 +30,7 @@ public class MenageDAO {
             }
 
         } catch (SQLException e) {
-            System.err.println("❌ Erreur récupération par ID : " + e.getMessage());
+            System.err.println(" Erreur récupération par ID : " + e.getMessage());
         }
         return null;
     }
@@ -56,7 +56,7 @@ public class MenageDAO {
             }
 
         } catch (SQLException e) {
-            System.err.println("❌ Erreur recherche par email + mot de passe : " + e.getMessage());
+            System.err.println(" Erreur recherche par email + mot de passe : " + e.getMessage());
         }
         return null;
     }
@@ -80,7 +80,7 @@ public class MenageDAO {
             }
 
         } catch (SQLException e) {
-            System.err.println("❌ Erreur recherche par email : " + e.getMessage());
+            System.err.println(" Erreur recherche par email : " + e.getMessage());
         }
         return null;
     }
@@ -104,7 +104,7 @@ public class MenageDAO {
             }
 
         } catch (SQLException e) {
-            System.err.println("❌ Erreur recherche par badge : " + e.getMessage());
+            System.err.println(" Erreur recherche par badge : " + e.getMessage());
         }
         return null;
     }
@@ -117,12 +117,12 @@ public class MenageDAO {
      */
     public boolean insert(Menage m) {
         if (findByEmail(m.getEmail()) != null) {
-            System.err.println("⚠️ Email déjà utilisé : " + m.getEmail());
+            System.err.println(" Email déjà utilisé : " + m.getEmail());
             return false;
         }
 
         if (findByBadge(m.getBadgeAccess()) != null) {
-            System.err.println("⚠️ Badge déjà utilisé : " + m.getBadgeAccess());
+            System.err.println(" Badge déjà utilisé : " + m.getBadgeAccess());
             return false;
         }
 
@@ -148,7 +148,7 @@ public class MenageDAO {
             }
 
         } catch (SQLException e) {
-            System.err.println("❌ Erreur insertion ménage : " + e.getMessage());
+            System.err.println(" Erreur insertion ménage : " + e.getMessage());
         }
         return false;
     }
@@ -171,7 +171,7 @@ public class MenageDAO {
             return stmt.executeUpdate() > 0;
 
         } catch (SQLException e) {
-            System.err.println("❌ Erreur mise à jour points : " + e.getMessage());
+            System.err.println(" Erreur mise à jour points : " + e.getMessage());
             return false;
         }
     }
@@ -196,7 +196,7 @@ public class MenageDAO {
             return stmt.executeUpdate() > 0;
 
         } catch (SQLException e) {
-            System.err.println("❌ Erreur mise à jour profil ménage : " + e.getMessage());
+            System.err.println(" Erreur mise à jour profil ménage : " + e.getMessage());
             return false;
         }
     }
