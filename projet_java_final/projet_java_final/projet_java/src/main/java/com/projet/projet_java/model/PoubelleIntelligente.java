@@ -12,7 +12,7 @@ public class PoubelleIntelligente {
     private String emplacement;
     private int idCentre;
 
-    // 🔹 Constructeur complet (utile lors de la récupération depuis la base de données)
+    //  Constructeur complet (utile lors de la récupération depuis la base de données)
     public PoubelleIntelligente(int idPoubelle, TypePoubelle typePoubelle, double capaciteMaximale,
                                 double capaciteActuelle, String emplacement, int idCentre) {
         this.idPoubelle = idPoubelle;
@@ -23,7 +23,7 @@ public class PoubelleIntelligente {
         this.idCentre = idCentre;
     }
 
-    // 🔹 Constructeur simplifié (ex: création initiale sans affectation complète)
+    //  Constructeur simplifié (ex: création initiale sans affectation complète)
     public PoubelleIntelligente(int idPoubelle, TypePoubelle typePoubelle, double capaciteMaximale) {
         this(idPoubelle, typePoubelle, capaciteMaximale, 0.0, "", 0);
     }
