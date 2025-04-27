@@ -32,7 +32,7 @@ public class HistoriqueDepotDAO {
             return stmt.executeUpdate() > 0;
 
         } catch (SQLException e) {
-            System.err.println("❌ Erreur insertion historique : " + e.getMessage());
+            System.err.println(" Erreur insertion historique : " + e.getMessage());
             return false;
         }
     }
@@ -63,7 +63,7 @@ public class HistoriqueDepotDAO {
             }
 
         } catch (SQLException e) {
-            System.err.println("❌ Erreur top poubelle par ménage : " + e.getMessage());
+            System.err.println(" Erreur top poubelle par ménage : " + e.getMessage());
         }
 
         return "Aucune donnée";
@@ -96,7 +96,7 @@ public class HistoriqueDepotDAO {
             }
 
         } catch (SQLException e) {
-            System.err.println("❌ Erreur récupération historique : " + e.getMessage());
+            System.err.println(" Erreur récupération historique : " + e.getMessage());
         }
 
         return historiques;
@@ -126,7 +126,7 @@ public class HistoriqueDepotDAO {
             }
 
         } catch (SQLException e) {
-            System.err.println("❌ Erreur récupération tous historiques : " + e.getMessage());
+            System.err.println(" Erreur récupération tous historiques : " + e.getMessage());
         }
 
         return historiques;
@@ -158,7 +158,7 @@ public class HistoriqueDepotDAO {
             }
 
         } catch (SQLException e) {
-            System.err.println("❌ Erreur récupération dernier dépôt : " + e.getMessage());
+            System.err.println(" Erreur récupération dernier dépôt : " + e.getMessage());
         }
 
         return null;
@@ -180,7 +180,7 @@ public class HistoriqueDepotDAO {
             if (rs.next()) return rs.getDouble(1);
 
         } catch (SQLException e) {
-            System.err.println("❌ Erreur total poids par ménage : " + e.getMessage());
+            System.err.println(" Erreur total poids par ménage : " + e.getMessage());
         }
         return 0;
     }
@@ -201,7 +201,7 @@ public class HistoriqueDepotDAO {
             if (rs.next()) return rs.getInt(1);
 
         } catch (SQLException e) {
-            System.err.println("❌ Erreur total points par ménage : " + e.getMessage());
+            System.err.println(" Erreur total points par ménage : " + e.getMessage());
         }
         return 0;
     }
@@ -232,12 +232,12 @@ public class HistoriqueDepotDAO {
                     double poids = rs.getDouble("total");
                     map.put(type, poids);
                 } catch (IllegalArgumentException e) {
-                    System.err.println("⚠️ Type de déchet ignoré (inconnu pour l'enum) : " + rs.getString("typeDechet"));
+                    System.err.println(" Type de déchet ignoré (inconnu pour l'enum) : " + rs.getString("typeDechet"));
                 }
             }
 
         } catch (SQLException e) {
-            System.err.println("❌ Erreur répartition déchets par type et ménage : " + e.getMessage());
+            System.err.println(" Erreur répartition déchets par type et ménage : " + e.getMessage());
         }
 
         return map;
