@@ -37,21 +37,21 @@ public class InscriptionController {
         String motDePasse = passwordField.getText();
 
         if (nom.isEmpty() || adresse.isEmpty() || email.isEmpty() || motDePasse.isEmpty()) {
-            inscriptionMessageLabel.setText("❌ Merci de remplir tous les champs.");
+            inscriptionMessageLabel.setText(" Merci de remplir tous les champs.");
             return;
         }
 
-        // 🎫 Génération aléatoire d'un badge unique
+        //  Génération aléatoire d'un badge unique
         String badge = "BADGE" + (100 + random.nextInt(900)); // BADGE100 à BADGE999
 
-        // 💥 Hash du mot de passe pour sécuriser la base de données
+        //  Hash du mot de passe pour sécuriser la base de données
         String motDePasseHache = HashUtils.hashPassword(motDePasse);
 
         Menage nouveauMenage = new Menage(0, nom, adresse, email, motDePasseHache, badge, 0);
 
         if (menageDAO.insert(nouveauMenage)) {
-            // ✅ Inscription réussie : petit délai puis retour à la page de connexion
-            inscriptionMessageLabel.setText("✅ Inscription réussie !");
+            //  Inscription réussie : petit délai puis retour à la page de connexion
+            inscriptionMessageLabel.setText(" Inscription réussie !");
             new Thread(() -> {
                 try {
                     Thread.sleep(1000);
@@ -63,7 +63,7 @@ public class InscriptionController {
                 });
             }).start();
         } else {
-            inscriptionMessageLabel.setText("❌ Erreur lors de l'inscription !");
+            inscriptionMessageLabel.setText(" Erreur lors de l'inscription !");
         }
     }
 
