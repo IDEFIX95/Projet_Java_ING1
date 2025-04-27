@@ -20,7 +20,7 @@ public class CentreDeTriDAO {
      */
     public boolean insert(CentreDeTri centre) {
         if (exists(centre.getNom(), centre.getAdresse())) {
-            System.err.println("⚠️ Centre de tri déjà existant (nom + adresse identiques).");
+            System.err.println(" Centre de tri déjà existant (nom + adresse identiques).");
             return false;
         }
 
@@ -42,7 +42,7 @@ public class CentreDeTriDAO {
             }
 
         } catch (SQLException e) {
-            System.err.println("❌ Erreur insertion centre de tri : " + e.getMessage());
+            System.err.println(" Erreur insertion centre de tri : " + e.getMessage());
         }
         return false;
     }
@@ -68,7 +68,7 @@ public class CentreDeTriDAO {
             }
 
         } catch (SQLException e) {
-            System.err.println("❌ Erreur vérification doublon centre : " + e.getMessage());
+            System.err.println(" Erreur vérification doublon centre : " + e.getMessage());
         }
 
         return false;
@@ -93,7 +93,7 @@ public class CentreDeTriDAO {
             }
 
         } catch (SQLException e) {
-            System.err.println("❌ Erreur récupération par ID : " + e.getMessage());
+            System.err.println(" Erreur récupération par ID : " + e.getMessage());
         }
 
         return null;
@@ -116,7 +116,7 @@ public class CentreDeTriDAO {
             }
 
         } catch (SQLException e) {
-            System.err.println("❌ Erreur récupération des centres : " + e.getMessage());
+            System.err.println(" Erreur récupération des centres : " + e.getMessage());
         }
 
         return centres;
@@ -141,7 +141,7 @@ public class CentreDeTriDAO {
             }
 
         } catch (SQLException e) {
-            System.err.println("❌ Erreur récupération par nom : " + e.getMessage());
+            System.err.println(" Erreur récupération par nom : " + e.getMessage());
         }
 
         return null;
