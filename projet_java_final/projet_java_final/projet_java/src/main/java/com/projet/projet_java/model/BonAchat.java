@@ -15,7 +15,7 @@ public class BonAchat {
     private LocalDate dateExpiration;
     private String categorie;
 
-    // 🔹 Champ utilisé uniquement pour l'affichage dans les vues (nom du commerce associé)
+    //  Champ utilisé uniquement pour l'affichage dans les vues (nom du commerce associé)
     private String nomCommerce;
 
     /**
