@@ -14,7 +14,7 @@ public class Menage {
     private String badgeAccess;
     private int pointsFidelity;
 
-    // 🔹 Constructeur principal complet
+    //  Constructeur principal complet
     public Menage(int idMenage, String nom, String adresse, String email, String motDePasse, String badgeAccess, int pointsFidelity) {
         this.idMenage = idMenage;
         this.nom = nom;
