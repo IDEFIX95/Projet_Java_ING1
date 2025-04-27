@@ -10,9 +10,9 @@ public class Dechet {
     private TypeDechet typeDechet;
     private double poids;
     private int idPoubelle;
-    private int idMenage; // ✅ Pour relier le déchet au ménage responsable
+    private int idMenage; //  Pour relier le déchet au ménage responsable
 
-    // 🔹 Constructeur complet (utile pour récupérer depuis la base)
+    //  Constructeur complet (utile pour récupérer depuis la base)
     public Dechet(int idDechet, TypeDechet typeDechet, double poids, int idPoubelle, int idMenage) {
         this.idDechet = idDechet;
         this.typeDechet = typeDechet;
@@ -21,7 +21,7 @@ public class Dechet {
         this.idMenage = idMenage;
     }
 
-    // 🔹 Constructeur sans ID (avant insertion dans la base)
+    //  Constructeur sans ID (avant insertion dans la base)
     public Dechet(TypeDechet typeDechet, double poids, int idPoubelle, int idMenage) {
         this(0, typeDechet, poids, idPoubelle, idMenage);
     }
