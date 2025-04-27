@@ -36,7 +36,7 @@ public class CommerceDAO {
             }
 
         } catch (SQLException e) {
-            System.err.println("❌ Erreur insertion commerce : " + e.getMessage());
+            System.err.println(" Erreur insertion commerce : " + e.getMessage());
         }
 
         return false;
@@ -64,7 +64,7 @@ public class CommerceDAO {
             }
 
         } catch (SQLException e) {
-            System.err.println("❌ Erreur récupération commerces : " + e.getMessage());
+            System.err.println(" Erreur récupération commerces : " + e.getMessage());
         }
 
         return commerces;
@@ -93,7 +93,7 @@ public class CommerceDAO {
             }
 
         } catch (SQLException e) {
-            System.err.println("❌ Erreur récupération commerce par ID : " + e.getMessage());
+            System.err.println(" Erreur récupération commerce par ID : " + e.getMessage());
         }
 
         return null;
@@ -122,7 +122,7 @@ public class CommerceDAO {
             }
 
         } catch (SQLException e) {
-            System.err.println("❌ Erreur récupération commerce par nom : " + e.getMessage());
+            System.err.println(" Erreur récupération commerce par nom : " + e.getMessage());
         }
 
         return null;
