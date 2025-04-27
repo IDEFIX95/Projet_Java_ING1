@@ -116,7 +116,7 @@ public class BonAchatController {
                 dashboard.refresh();
             }
 
-            showAlert("🎉 Bon d'achat généré avec succès !");
+            showAlert(" Bon d'achat généré avec succès !");
             labelPoints.setText("Vos Points : " + menageConnecte.getPointsFidelity());
         } else {
             showAlert("Erreur lors de la génération du bon d'achat.");
