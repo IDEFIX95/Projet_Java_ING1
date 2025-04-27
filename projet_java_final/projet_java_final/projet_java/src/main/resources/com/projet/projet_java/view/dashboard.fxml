@@ -16,35 +16,35 @@
       <AnchorPane prefHeight="400.0" prefWidth="600.0">
 
          <children>
-            <!-- 🔹 Label affichant le nom de l'utilisateur connecté -->
+            <!--  Label affichant le nom de l'utilisateur connecté -->
             <Label fx:id="labelNomUtilisateur" style="-fx-font-weight: bold; -fx-font-size: 14px;" />
 
-            <!-- 🔹 Titre de bienvenue sur le tableau de bord -->
+            <!--  Titre de bienvenue sur le tableau de bord -->
             <Label layoutX="139.0" layoutY="21.0" text="Bienvenue sur votre tableau de bord">
                <font>
                   <Font size="20.0" />
                </font>
             </Label>
 
-            <!-- 🔹 Bouton pour se déconnecter -->
+            <!--  Bouton pour se déconnecter -->
             <Button fx:id="logoutButton" layoutX="500.0" layoutY="70.0" mnemonicParsing="false" onAction="#handleLogout" text="Deconnexion" />
 
-            <!-- 🔹 Bouton pour consulter l'historique des dépôts -->
+            <!--  Bouton pour consulter l'historique des dépôts -->
             <Button layoutX="252.0" layoutY="200.0" mnemonicParsing="false" onAction="#goToHistorique" text="Voir historique" />
 
-            <!-- 🔹 Bouton pour consulter ses bons d'achat -->
+            <!--  Bouton pour consulter ses bons d'achat -->
             <Button fx:id="voirBonAchatButton" layoutX="239.0" layoutY="246.0" mnemonicParsing="false" onAction="#goToBonAchat" text="Voir mon bon achat" />
 
-            <!-- 🔹 Label affichant la date et quantité du dernier dépôt -->
+            <!--  Label affichant la date et quantité du dernier dépôt -->
             <Label fx:id="labelDernierDepot" layoutX="184.0" layoutY="160.0" text="Dernier dépôt : ..." />
 
-            <!-- 🔹 Label affichant les points de fidélité -->
+            <!--  Label affichant les points de fidélité -->
             <Label fx:id="labelPointsFidelite" layoutX="237.0" layoutY="130.0" text="Points de fidélité : ..." />
 
-            <!-- 🔹 Bouton pour déposer de nouveaux déchets -->
+            <!--  Bouton pour déposer de nouveaux déchets -->
             <Button layoutX="248.0" layoutY="294.0" mnemonicParsing="false" onAction="#handleOuvrirDepot" text="Déposer Déchet" />
 
-            <!-- 🔹 Bouton pour accéder au profil de l'utilisateur -->
+            <!--  Bouton pour accéder au profil de l'utilisateur -->
             <Button layoutX="14.0" layoutY="70.0" mnemonicParsing="false" onAction="#handleMonProfil" text="Profil" />
 
          </children>
