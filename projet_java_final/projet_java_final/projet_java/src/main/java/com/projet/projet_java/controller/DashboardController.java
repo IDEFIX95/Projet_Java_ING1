@@ -158,7 +158,7 @@ public class DashboardController {
             FenetreManager.ajouterFenetre(stage);
 
         } catch (IOException e) {
-            System.err.println("❌ Erreur ouverture historique : " + e.getMessage());
+            System.err.println(" Erreur ouverture historique : " + e.getMessage());
         }
     }
 
