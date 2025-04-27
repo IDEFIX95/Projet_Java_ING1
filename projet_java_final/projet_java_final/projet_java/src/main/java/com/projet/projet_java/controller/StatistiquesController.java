@@ -37,7 +37,7 @@ public class StatistiquesController {
 
         int idMenage = UtilisateurConnecte.getInstance().getMenage().getIdMenage();
 
-        // 📈 Récupération des statistiques principales
+        //  Récupération des statistiques principales
         double totalPoids = dao.getPoidsTotalByMenage(idMenage);
         int totalPoints = dao.getPointsTotalByMenage(idMenage);
         String topPoubelle = dao.getTopPoubelleByMenage(idMenage);
@@ -46,7 +46,7 @@ public class StatistiquesController {
         totalPointsLabel.setText(String.valueOf(totalPoints));
         topPoubelleLabel.setText(topPoubelle != null ? topPoubelle : "Aucune");
 
-        // 📊 Récupération de la répartition des déchets par type
+        //  Récupération de la répartition des déchets par type
         Map<TypeDechet, Double> repartition = dao.getRepartitionQuantiteParType(idMenage);
         double totalReel = repartition.values().stream().mapToDouble(Double::doubleValue).sum();
 
@@ -60,7 +60,7 @@ public class StatistiquesController {
             });
         }
 
-        // ⚙️ Configuration visuelle du graphique
+        //  Configuration visuelle du graphique
         dechetsChart.setPrefSize(600, 450);
         dechetsChart.setLabelsVisible(true);
         dechetsChart.setLegendVisible(true);
