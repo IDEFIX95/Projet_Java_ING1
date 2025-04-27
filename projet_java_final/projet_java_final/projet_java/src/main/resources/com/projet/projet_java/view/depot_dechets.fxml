@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<!--
+    Interface de dépôt de déchets
+    ➔ Permet de scanner un badge, choisir une poubelle et sélectionner des déchets à déposer.
+    ➔ Contrôleur associé : DepotDechetsController
+-->
+<VBox spacing="15.0" alignment="CENTER" xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.projet.projet_java.controller.DepotDechetsController">
+
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <!-- 🔹 Titre principal -->
+    <Label text="Déposer vos déchets" style="-fx-font-size: 20px; -fx-font-weight: bold"/>
+
+    <!-- 🔐 Saisie du badge utilisateur -->
+    <HBox spacing="10" alignment="CENTER">
+        <Label text="Badge"/>
+        <TextField fx:id="badgeField" promptText="Votre badge" prefWidth="150"/>
+    </HBox>
+
+    <!-- 🗑️ Choix de la poubelle dans la liste déroulante -->
+    <ComboBox fx:id="comboPoubelle" promptText="Choisissez une poubelle" prefWidth="250"/>
+
+    <!-- ♻️ Sélection des types de déchets à déposer -->
+    <VBox spacing="10" alignment="CENTER">
+        <Label text="Sélectionnez les déchets déposés :" style="-fx-font-weight: bold"/>
+
+        <GridPane hgap="10" vgap="10">
+            <columnConstraints>
+                <ColumnConstraints halignment="RIGHT"/>
+                <ColumnConstraints halignment="LEFT"/>
+            </columnConstraints>
+
+            <!-- 🔸 Cases à cocher pour chaque type de déchet -->
+            <CheckBox fx:id="checkPlastique" text="Plastique" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+            <CheckBox fx:id="checkVerre" text="Verre" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+            <CheckBox fx:id="checkCarton" text="Carton" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+            <CheckBox fx:id="checkMetal" text="Métal" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+        </GridPane>
+    </VBox>
+
+    <!-- 🟢 Bouton pour déclencher l'action de dépôt -->
+    <Button text="Déposer" onAction="#handleDepot"/>
+
+    <!-- 🔄 Label pour afficher les messages de succès ou d'erreur dynamiquement -->
+    <Label fx:id="labelMessage" textFill="green"/>
+
+</VBox>

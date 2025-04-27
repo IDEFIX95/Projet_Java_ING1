@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<!--
+    Vue FXML pour afficher l'historique des dépôts d'un utilisateur.
+    ➔ Contrôleur associé : HistoriqueController.java
+-->
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.projet.projet_java.controller.HistoriqueController"
+            prefWidth="600" prefHeight="400">
+
+    <!-- Zone de texte pour afficher l'historique des dépôts -->
+    <TextArea fx:id="historiqueTextArea"
+              layoutX="50" layoutY="80"
+              prefWidth="500" prefHeight="240"
+              editable="false"
+              wrapText="true" />
+</AnchorPane>

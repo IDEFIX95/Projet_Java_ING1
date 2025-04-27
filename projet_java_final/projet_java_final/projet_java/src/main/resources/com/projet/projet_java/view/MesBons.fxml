@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<!--
+    Vue FXML pour afficher la liste des bons d'achat de l'utilisateur.
+    ➔ Contrôleur associé : MesBonsController.java
+-->
+<BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.projet.projet_java.controller.MesBonsController">
+
+    <!-- TOP : Bouton Retour + Titre de la page -->
+    <top>
+        <HBox spacing="20" alignment="CENTER_LEFT" BorderPane.alignment="CENTER">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <!-- Bouton retour au menu des bons -->
+            <Button text="Retour au Bon d'Achat" onAction="#handleRetourBonAchat"/>
+            <!-- Titre -->
+            <Label text="Mes Bons d'Achat" style="-fx-font-size: 18px; -fx-font-weight: bold;" />
+        </HBox>
+    </top>
+
+    <!-- CENTRE : TableView listant tous les bons d'achat -->
+    <center>
+        <VBox spacing="20" alignment="CENTER" BorderPane.alignment="CENTER">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+
+            <TableView fx:id="bonsTable" prefHeight="450" prefWidth="800">
+                <columns>
+                    <!-- Colonne : Nom du commerce -->
+                    <TableColumn fx:id="commerceColumn" text="Commerce" prefWidth="150"/>
+                    <!-- Colonne : Catégorie du bon -->
+                    <TableColumn fx:id="categorieColumn" text="Catégorie" prefWidth="150"/>
+                    <!-- Colonne : Points utilisés -->
+                    <TableColumn fx:id="pointsColumn" text="Points Utilisés" prefWidth="100"/>
+                    <!-- Colonne : Date de création -->
+                    <TableColumn fx:id="dateCreationColumn" text="Date de création" prefWidth="150"/>
+                    <!-- Colonne : Date d'expiration -->
+                    <TableColumn fx:id="dateExpirationColumn" text="Date d'expiration" prefWidth="150"/>
+                </columns>
+            </TableView>
+
+        </VBox>
+    </center>
+
+</BorderPane>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+
+<!--
+    Page de connexion pour l'utilisateur ou l'administrateur.
+    ➔ Permet d'entrer un email et un mot de passe.
+    ➔ Possibilité de se connecter ou de créer un compte.
+    ➔ Contrôleur associé : ConnexionController
+-->
+<AnchorPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.projet.projet_java.controller.ConnexionController"
+            prefWidth="400.0" prefHeight="300.0">
+
+    <VBox spacing="15" alignment="CENTER" AnchorPane.topAnchor="50" AnchorPane.leftAnchor="50"
+          AnchorPane.rightAnchor="50" AnchorPane.bottomAnchor="50">
+
+        <!-- 🔹 Titre de la fenêtre de connexion -->
+        <Label text="Connexion" style="-fx-font-size: 24px; -fx-font-weight: bold;" />
+
+        <!-- 🔹 Champ de saisie de l'email -->
+        <TextField fx:id="emailField" promptText="Email" maxWidth="250"/>
+
+        <!-- 🔹 Champ de saisie du mot de passe -->
+        <PasswordField fx:id="passwordField" promptText="Mot de passe" maxWidth="250"/>
+
+        <!-- 🔹 Label d'erreur affiché en cas d'identifiants incorrects -->
+        <Label fx:id="errorLabel" text="Identifiants incorrects" visible="false" textFill="red"/>
+
+        <!-- 🔹 Boutons d'action : Connexion ou Inscription -->
+        <HBox spacing="20" alignment="CENTER">
+            <Button text="Se connecter" onAction="#handleLogin"/>
+            <Button text="Créer un compte" onAction="#handleOpenInscription"/>
+        </HBox>
+
+    </VBox>
+
+</AnchorPane>

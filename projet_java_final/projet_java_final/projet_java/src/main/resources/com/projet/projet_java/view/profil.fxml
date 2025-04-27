@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<!--
+    Vue FXML pour afficher et modifier les informations du profil utilisateur.
+    ➔ Contrôleur associé : ProfilController.java
+-->
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.projet.projet_java.controller.ProfilController">
+
+    <!-- Centre de la fenêtre : Formulaire utilisateur -->
+    <center>
+        <VBox spacing="15" alignment="CENTER">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20" />
+            </padding>
+
+            <!-- Titre principal du profil -->
+            <Label text="Mon Profil" style="-fx-font-size: 24px; -fx-font-weight: bold;" />
+
+            <!-- Formulaire d'édition des informations -->
+            <GridPane hgap="10" vgap="10">
+
+                <!-- Champ : Nom -->
+                <Label text="Nom:" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+                <TextField fx:id="nomField" GridPane.rowIndex="0" GridPane.columnIndex="1" />
+
+                <!-- Champ : Email -->
+                <Label text="Email:" GridPane.rowIndex="1" GridPane.columnIndex="0" />
+                <TextField fx:id="emailField" GridPane.rowIndex="1" GridPane.columnIndex="1" />
+
+                <!-- Champ : Mot de passe (optionnel) -->
+                <Label text="Mot de passe:" GridPane.rowIndex="2" GridPane.columnIndex="0" />
+                <VBox spacing="5" GridPane.rowIndex="2" GridPane.columnIndex="1">
+                    <PasswordField fx:id="passwordField" />
+                    <Label text="(Laissez vide pour ne pas changer)" style="-fx-font-size: 10px; -fx-text-fill: gray;" />
+                </VBox>
+
+                <!-- Champ : Adresse -->
+                <Label text="Adresse:" GridPane.rowIndex="3" GridPane.columnIndex="0" />
+                <TextField fx:id="adresseField" GridPane.rowIndex="3" GridPane.columnIndex="1" />
+
+                <!-- Points de fidélité -->
+                <Label text="Points de fidélité:" GridPane.rowIndex="4" GridPane.columnIndex="0" />
+                <Label fx:id="pointsLabel" text="0" GridPane.rowIndex="4" GridPane.columnIndex="1" />
+
+                <!-- Badge d'accès -->
+                <Label text="Badge d'accès:" GridPane.rowIndex="5" GridPane.columnIndex="0" />
+                <Label fx:id="badgeLabel" text="-" GridPane.rowIndex="5" GridPane.columnIndex="1" />
+
+            </GridPane>
+
+            <!-- Boutons d'action -->
+            <HBox spacing="10">
+                <Button text="Enregistrer" onAction="#handleUpdate" />
+                <Button text="Voir Statistiques" onAction="#goToStats" />
+                <Button text="Retour" onAction="#handleRetourDashboard" />
+            </HBox>
+
+        </VBox>
+    </center>
+</BorderPane>
